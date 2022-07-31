@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jitu Streak Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- upper section -->
+      <section class="welcome-section">
+        <!-- Icon section -->
+        <div class="icon-area">
+          <ion-icon id="add-btn" name="add-circle-outline"></ion-icon>
+          <ion-icon id="close-btn" name="close-circle-outline"></ion-icon>
+        </div>
+        <!-- Main section -->
+        <!-- Section with phone -->
+        <div class="main-area">
+          <img src="/images/demo2-with-watch.png" />
+          <h3>Welcome to My Streak Counter</h3>
+        </div>
+
+        <!-- Form -->
+        <div class="form-section">
+          <!-- Icons section -->
+          <div class="icons-area">
+            <!-- Menus -->
+            <div class="icons">
+              <!-- Vertical dots icon -->
+              <ion-icon name="ellipsis-vertical"></ion-icon>
+              <!-- Hamberger menu-->
+              <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <p>Add a Todo here</p>
+          </div>
+          <!-- Form section -->
+          <div class="form-container">
+            <form action="#">
+              <p>Please fill in all Fields</p>
+              <div class="header">Please Add a task</div>
+              <!-- Task name -->
+              <div class="task-input" id="task-name">
+                <label for="">Task Name</label>
+                <input type="text" />
+              </div>
+              <!-- Image here -->
+              <div class="task-input" id="task-img">
+                <label for="">Image</label>
+                <input type="text" />
+              </div>
+              <!-- Date here -->
+              <div class="task-input" id="task-date">
+                <label for="">Date</label>
+                <input type="date" />
+              </div>
+              <!-- Add todo -->
+              <input type="submit" value="Add Task" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notification/Activity status section -->
+      <!-- <section class="activity-status">You Don't Have Any Activities!!</section> -->
+      <section class="activity-status">Activities</section>
+
+      <!-- Activity list section -->
+      <section class="activity-section">
+        <!-- First activity -->
+        <div class="activity">
+          <ion-icon name="logo-no-smoking"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Smoking</p>
+        </div>
+        <!-- First activity -->
+        <div class="activity">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Smoking</p>
+        </div>
+        <!-- First activity -->
+        <div class="activity">
+          <ion-icon name="fast-food-outline"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Smoking</p>
+        </div>
+        <!-- First activity -->
+        <div class="activity">
+          <ion-icon name="bed-outline"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Smoking</p>
+        </div>
+        <!-- First activity -->
+        <div class="activity">
+          <ion-icon name="walk-outline"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Smoking</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal section -->
+    <section class="modal">
+      <div class="activities-container">
+        <!-- Activity -->
+        <div class="activity">
+          <ion-icon name="bed-outline"></ion-icon>
+          <p class="date">2022-07-31</p>
+          <p class="activity-name">Enough Sleep</p>
+          <p class="time-passed">16 days</p>
+        </div>
+        <!-- Close/delete activity -->
+        <div class="close-delete-btn">
+          <div class="btn close">Close</div>
+          <div class="btn delete">Delete</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <!-- functionality script -->
+    <script src="index.js"></script>
+    <!-- Icons script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
