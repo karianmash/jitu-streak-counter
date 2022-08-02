@@ -25,7 +25,13 @@ export class RenderStreak {
         `;
 
     activitySection.appendChild(div);
-    activityStatus.innerHTML = "Activities";
+
+    setTimeout(() => {
+      activityStatus.style.backgroundColor = "";
+      activityStatus.innerHTML = "Activities";
+    }, 5000)
+    activityStatus.style.backgroundColor = "rgb(150, 248, 215)";
+    activityStatus.innerHTML = "Success!";
   }
 
   // Render to modal

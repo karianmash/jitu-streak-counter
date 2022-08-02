@@ -226,15 +226,16 @@ body {
 /* Activity status */
 .activity-status {
   display: flex;
-  width: 100%;
+  width: 40%;
   height: 3rem;
   align-items: center;
   justify-content: center;
   font-style: italic;
   font-weight: 500;
   font-size: 1.3rem;
-  margin-bottom: 1.7rem;
-  /* background-color: aquamarine; */
+  margin: 0.5rem auto 1.7rem;
+  border-radius: 3px;
+  /* background-color: rgb(150, 248, 215); */
 }
 
 /* Best streak section */
