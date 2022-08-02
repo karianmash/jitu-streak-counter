@@ -1,5 +1,5 @@
 import { Streak } from "../interfaces/Streak.js";
-import { activitySection, activityStatus, modal } from "../util/htmlElements.js";
+import { bestStreak, activitySection, activityStatus, modal } from "../util/htmlElements.js";
 import { Events } from "./EventHandler.js";
 import { CalculateDays } from "./CalculateDays.js";
 
@@ -32,17 +32,13 @@ export class RenderStreak {
   public renderStreakModal(streak: Streak) {
     let event = new Events();
     
-    let days: number;
+    // let days: number = CalculateDays.calculateNoOfDays(streak.taskDate);
+
     let daysString: string;
 
-    if(CalculateDays.calculateNoOfDays(streak.taskDate) <= 0) {
-      days = 0;
-      daysString = "days"
-    } else if (CalculateDays.calculateNoOfDays(streak.taskDate) > 1) {
-      days = CalculateDays.calculateNoOfDays(streak.taskDate);
+    if (streak.taskDays == 0 || streak.taskDays > 1) {
       daysString = "days";
     } else {
-      days = CalculateDays.calculateNoOfDays(streak.taskDate);
       daysString = "day";
     }
 
@@ -59,7 +55,7 @@ export class RenderStreak {
           </div>
           <p class="date">${streak.taskDate}</p>
           <p class="activity-name">${streak.taskName}</p>
-          <p class="time-passed">${days} ${daysString}</p>
+          <p class="time-passed">${streak.taskDays} ${daysString}</p>
         </div>
         <!-- Close/delete activity -->
         <div class="close-delete-btn">
@@ -79,5 +75,21 @@ export class RenderStreak {
     closeModal.addEventListener("click", event.closeModalBtn);
 
     deleteModal.addEventListener("click", event.deleteStreak);
+  }
+
+  // Render best streak
+  public renderBestStreak(streak: Streak | undefined): void {
+    bestStreak.innerHTML = `
+        <h3>Best Streaks</h3>
+        <!-- First activity -->
+        <div class="activity">
+          <div class="image-wrapper">
+            <!-- <ion-icon name="logo-no-smoking"></ion-icon> -->
+            <img src="${streak?.taskImage}" alt="" />
+          </div>
+          <p class="date">${streak?.taskDate}</p>
+          <p class="activity-name">${streak?.taskName}</p>
+        </div>
+    `;
   }
 }

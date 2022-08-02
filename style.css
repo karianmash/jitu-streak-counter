@@ -23,7 +23,7 @@ body {
 .welcome-section {
   display: flex;
   width: 100%;
-  height: 60vh;
+  height: 45vh;
   background-color: var(--dark-orange);
 }
 .welcome-section .icon-area {
@@ -35,13 +35,13 @@ body {
   /* background-color: aqua; */
 }
 .welcome-section .icon-area ion-icon {
-  font-size: 72px;
+  font-size: 64px;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 .welcome-section .icon-area ion-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .welcome-section .icon-area .add-btn {
   display: block;
@@ -58,14 +58,42 @@ body {
   align-items: center;
   /* background-color: rgb(183, 123, 240); */
   color: #fff;
+  /* animation-name: beat;
+  animation-duration: 1s; */
 }
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
 .welcome-section .main-area img {
   height: 98%;
   margin: 0 4rem;
   width: auto;
+  animation-name: rotate;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes translate {
+  from {
+    transform: translateY(-4rem);
+  }
+  to {
+    transform: translateY(2rem);
+  }
 }
 .welcome-section .main-area h3 {
-  font-size: 2rem;
+  margin-left: -2rem;
+  font-size: 1.8rem;
+  animation-name: translate;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 /* Section with the form */
@@ -73,30 +101,43 @@ body {
   display: none;
   width: 80%;
 }
+@keyframes drop-anim {
+  from {
+    transform: translateY(-3.5rem);
+  }
+  to {
+    transform: translateY(2rem);
+  }
+}
 .welcome-section .form-section .icons-area {
   /* background-color: rgb(211, 44, 197); */
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation-name: drop-anim;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 .welcome-section .form-section .icons-area .icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 3rem;
   /* background-color: aquamarine; */
 }
+
 .welcome-section .form-section .icons-area .icons ion-icon {
-  font-size: 48px;
+  font-size: 45px;
   color: #fff;
 }
 .welcome-section .form-section .icons-area .icons ion-icon:last-child {
-  font-size: 88px;
-  margin-left: -1.6rem;
+  font-size: 80px;
+  margin-left: -1.2rem;
 }
 .welcome-section .form-section .icons-area p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
 }
 /* The form */
@@ -115,20 +156,32 @@ body {
   padding: 0 0.6rem;
   margin: 0 auto;
 }
+@keyframes rotate-form {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(30deg);
+  }
+}
+.welcome-section .form-section .form-container form:hover {
+  animation-name: rotate-form;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
 .welcome-section .form-section .form-container form .error-message {
   width: 100%;
   display: none;
-  margin: 0.5rem 0;
+  margin: 0.1rem 0;
   color: red;
 }
 .welcome-section .form-section .form-container form .header {
-  height: 3rem;
   width: 100%;
-  margin: 0.3rem 0 1rem;
+  margin: 0.3rem 0 0.6rem;
   display: flex;
   align-items: center;
   border-radius: 2px;
-  padding-left: 0.7rem;
+  padding: 0.5rem 0 0.5rem 0.7rem;
   color: #fff;
   background-color: var(--dark-orange);
 }
@@ -136,15 +189,15 @@ body {
   display: flex;
   /* background-color: aquamarine; */
   flex-direction: column;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .welcome-section .form-section .form-container form .task-input label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   font-size: 1.1rem;
   color: var(--dark-orange);
 }
 .welcome-section .form-section .form-container form .task-input input {
-  height: 2rem;
+  height: 1.8rem;
   border: 2px solid rgb(182, 181, 181);
   border-radius: 3px;
 }
@@ -155,12 +208,12 @@ body {
   .task-input
   input[type="date"] {
   padding-left: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 .welcome-section .form-section .form-container form input[type="submit"] {
   width: 100%;
   display: flex;
-  height: 3rem;
+  height: 2.3rem;
   color: #fff;
   font-size: 1.1rem;
   background-color: var(--dark-orange);
@@ -175,23 +228,66 @@ body {
   display: flex;
   width: 100%;
   height: 3rem;
-  margin-top: 0.5rem;
   align-items: center;
   justify-content: center;
   font-style: italic;
   font-weight: 500;
   font-size: 1.3rem;
+  margin-bottom: 1.7rem;
   /* background-color: aquamarine; */
 }
 
-/* Activity section */
+/* Best streak section */
+.best-streaks {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aquamarine; */
+  padding: 0 5rem;
+  margin-bottom: 1rem;
+}
+.best-streaks h3 {
+  margin-bottom: 0.6rem;
+}
+.best-streaks .activity {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 15rem;
+  border: 2px solid var(--light-orange);
+  border-radius: 6px;
+  margin: 0 2rem 1rem 0;
+}
+.best-streaks .activity .image-wrapper {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+}
+.best-streaks .activity .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.best-streaks .activity .date {
+  margin: 0.7rem 0;
+}
+
+/* List streaks */
 .activity-section {
   display: flex;
   flex-wrap: wrap;
   height: auto;
   justify-content: center;
   align-items: center;
-  margin-top: 1.7rem;
   /* background-color: aquamarine; */
   padding: 0 5rem;
 }
@@ -199,7 +295,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 14rem;
+  height: 10rem;
   width: 15rem;
   border: 2px solid var(--light-orange);
   border-radius: 6px;
@@ -211,7 +307,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 /* Activity image */
 .activity-section .activity .image-wrapper img {
