@@ -13,8 +13,8 @@
       <section class="welcome-section">
         <!-- Icon section -->
         <div class="icon-area">
-          <ion-icon id="add-btn" name="add-circle-outline"></ion-icon>
-          <ion-icon id="close-btn" name="close-circle-outline"></ion-icon>
+          <ion-icon class="add-btn" name="add-circle-outline"></ion-icon>
+          <ion-icon class="close-btn" name="close-circle-outline"></ion-icon>
         </div>
         <!-- Main section -->
         <!-- Section with phone -->
@@ -39,90 +39,55 @@
           <!-- Form section -->
           <div class="form-container">
             <form action="#">
-              <p>Please fill in all Fields</p>
+              <p class="error-message">Please fill in all Fields</p>
               <div class="header">Please Add a task</div>
               <!-- Task name -->
-              <div class="task-input" id="task-name">
+              <div class="task-input">
                 <label for="">Task Name</label>
-                <input type="text" />
+                <input id="task-name" type="text" value="Bought bike" />
               </div>
               <!-- Image here -->
-              <div class="task-input" id="task-img">
+              <div class="task-input">
                 <label for="">Image</label>
-                <input type="text" />
+                <input
+                  id="task-image"
+                  type="text"
+                  value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzq71cuE5gMkI4-vHFLzSbUrRx8HN7smD_dI16W_slCYPqlfb_IW8NuJHECLkEt42yawE&usqp=CAU"
+                />
               </div>
               <!-- Date here -->
-              <div class="task-input" id="task-date">
+              <div class="task-input">
                 <label for="">Date</label>
-                <input type="date" />
+                <input id="task-date" type="date" value="2022-08-22" />
               </div>
               <!-- Add todo -->
-              <input type="submit" value="Add Task" />
+              <input id="submit-btn" type="submit" value="Add Task" />
             </form>
           </div>
         </div>
       </section>
 
       <!-- Notification/Activity status section -->
-      <!-- <section class="activity-status">You Don't Have Any Activities!!</section> -->
-      <section class="activity-status">Activities</section>
+      <section class="activity-status">You Don't Have Any Activities!!</section>
+      <!-- <section class="activity-status">Activities</section> -->
+
+      <!-- Best Streaks -->
+      <!-- <section class="best-streaks">
+        <h3>Best Streaks</h3>
+        <div class="best-streaks-container"></div>
+      </section> -->
 
       <!-- Activity list section -->
       <section class="activity-section">
-        <!-- First activity -->
-        <div class="activity">
-          <ion-icon name="logo-no-smoking"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Smoking</p>
-        </div>
-        <!-- First activity -->
-        <div class="activity">
-          <ion-icon name="bicycle-outline"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Smoking</p>
-        </div>
-        <!-- First activity -->
-        <div class="activity">
-          <ion-icon name="fast-food-outline"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Smoking</p>
-        </div>
-        <!-- First activity -->
-        <div class="activity">
-          <ion-icon name="bed-outline"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Smoking</p>
-        </div>
-        <!-- First activity -->
-        <div class="activity">
-          <ion-icon name="walk-outline"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Smoking</p>
-        </div>
       </section>
     </main>
 
     <!-- Modal section -->
-    <section class="modal">
-      <div class="activities-container">
-        <!-- Activity -->
-        <div class="activity">
-          <ion-icon name="bed-outline"></ion-icon>
-          <p class="date">2022-07-31</p>
-          <p class="activity-name">Enough Sleep</p>
-          <p class="time-passed">16 days</p>
-        </div>
-        <!-- Close/delete activity -->
-        <div class="close-delete-btn">
-          <div class="btn close">Close</div>
-          <div class="btn delete">Delete</div>
-        </div>
-      </div>
-    </section>
+    <section class="modal"></section>
 
     <!-- Scripts -->
     <!-- functionality script -->
-    <script src="index.js"></script>
+    <script type="module" src="./dist/index.js"></script>
     <!-- Icons script -->
     <script
       type="module"
