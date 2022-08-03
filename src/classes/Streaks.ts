@@ -1,9 +1,10 @@
 import { Streak } from "../interfaces/Streak.js";
+import { StreakClassInterface } from "../interfaces/StreakClassInterface.js";
 import { taskDate, taskImage, taskName } from "../types/formInputs.js";
 import { CalculateDays } from "./CalculateDays.js";
 import { RenderStreak } from "./RenderStreak.js";
 
-export class Streaks {
+export class Streaks implements StreakClassInterface {
   private streaks: Streak[] = [];
   private bestStreak: Streak | undefined;
 
@@ -23,17 +24,12 @@ export class Streaks {
       taskDate,
       taskDays: days,
     };
-
     // Push to the array
     this.streaks.push(streak);
-
     // Get largest number of days
     let mostDays: number = Math.max(
       ...this.streaks.map((streak) => streak.taskDays)
     );
-
-    // alert(mostDays)
-
     // Get streak with most days
     this.streaks.forEach((streak) => {
       if (streak.taskDays == mostDays) {
@@ -42,13 +38,27 @@ export class Streaks {
         // alert(this.bestStreak.taskDays);
       }
     });
-
+    // Instantiate Reander class
     let renderStreak = new RenderStreak();
+    // Render best streak
     renderStreak.renderBestStreak(this.bestStreak);
     // Render to DOM
     renderStreak.renderStreakDom(streak);
-    // Render best streak
-    // renderStreak.renderBestStreak(this.bestStreak);
+  }
+
+  // Return best streak
+  public getBestStreak() {
+    let mostDays: number = Math.max(
+      ...this.streaks.map((streak) => streak.taskDays)
+    );
+    // Get streak with most days
+    this.streaks.forEach((streak) => {
+      if (streak.taskDays == mostDays) {
+        this.bestStreak = streak;
+      }
+    });
+
+    return this.bestStreak;
   }
 
   // Return streak
@@ -72,6 +82,11 @@ export class Streaks {
       if (streak.id == streakId) {
         let streakIndex = this.streaks.indexOf(streak);
         this.streaks.splice(streakIndex, 1);
+
+        // Instantiate Reander class
+        let renderStreak = new RenderStreak();
+        // Render best streak
+        renderStreak.renderBestStreak(this.getBestStreak());
       }
     });
   }

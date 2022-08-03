@@ -1,13 +1,12 @@
 import { taskDate } from "../types/formInputs";
-import { formTaskDate } from "../util/htmlElements";
 
 export class CalculateDays {
   constructor() {}
 
-  public static calculateNoOfDays(taskDate: taskDate) {
-    let currentDate = new Date().getTime();
+  public static calculateNoOfDays(taskDate: taskDate): number {
+    let currentDate: number = new Date().getTime();
 
-    let dayAdded = new Date(taskDate).getTime();
+    let dayAdded: number = new Date(taskDate).getTime();
 
     let days: number = Math.floor((currentDate - dayAdded) / (1000 * 3600 * 24));
 

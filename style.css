@@ -8,18 +8,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #fff;
+  background-color: rgb(247, 253, 255);
 }
-/* .show {
-  display: flex;
-}
-.hide {
-  display: none;
-} */
-/* main {
-  width: 99%;
-  margin: 0 auto;
-} */
 .welcome-section {
   display: flex;
   width: 100%;
@@ -118,7 +108,7 @@ body {
   animation-name: drop-anim;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  /* animation-iteration-count: infinite; */
 }
 .welcome-section .form-section .icons-area .icons {
   display: flex;
@@ -155,19 +145,6 @@ body {
   height: 100%;
   padding: 0 0.6rem;
   margin: 0 auto;
-}
-@keyframes rotate-form {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(30deg);
-  }
-}
-.welcome-section .form-section .form-container form:hover {
-  animation-name: rotate-form;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
 }
 .welcome-section .form-section .form-container form .error-message {
   width: 100%;
@@ -226,7 +203,7 @@ body {
 /* Activity status */
 .activity-status {
   display: flex;
-  width: 40%;
+  width: 90%;
   height: 3rem;
   align-items: center;
   justify-content: center;
@@ -242,7 +219,6 @@ body {
 .best-streaks {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   height: auto;
   justify-content: center;
   align-items: center;
@@ -252,15 +228,15 @@ body {
 }
 .best-streaks h3 {
   margin-bottom: 0.6rem;
+  text-align: center;
 }
 .best-streaks .activity {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 10rem;
-  width: 15rem;
+  height: auto;
+  width: 40%;
   border: 2px solid var(--light-orange);
   border-radius: 6px;
   margin: 0 2rem 1rem 0;
@@ -281,14 +257,26 @@ body {
 .best-streaks .activity .date {
   margin: 0.7rem 0;
 }
+.best-streaks .activity .activity-name {
+  margin-bottom: 1rem;
+}
 
 /* List streaks */
-.activity-section {
+.activity-container {
+  display: flex;
+  flex-direction: column;
+}
+.activity-container h3 {
+  display: none;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.activity-container .activity-section {
   display: flex;
   flex-wrap: wrap;
   height: auto;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
   /* background-color: aquamarine; */
   padding: 0 5rem;
 }
@@ -296,7 +284,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 10rem;
+  height: auto;
   width: 15rem;
   border: 2px solid var(--light-orange);
   border-radius: 6px;
@@ -322,7 +310,7 @@ body {
   color: rgb(55, 151, 230);
 } */
 .activity-section .activity .date {
-  margin: 0.7rem 0;
+  margin: 1rem 0 0.7rem 0;
 }
 
 /* Modal */
@@ -336,11 +324,11 @@ body {
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .modal .activities-container {
-  background-color: #fff;
-  width: 40%;
+  background-color: rgb(255, 233, 233);
+  width: 55%;
   height: auto;
   margin: 0 auto;
 }
@@ -353,7 +341,7 @@ body {
   align-items: center;
 }
 .modal .activities-container .activity .modal-image {
-  height: 20rem;
+  height: 23rem;
   width: 100%;
 }
 .modal .activities-container .activity .modal-image img {
@@ -389,10 +377,30 @@ body {
   font-size: 1.2rem;
   background-color: rgb(142, 19, 146);
 }
-.modal .activities-container .close-delete-btn .close-modal {
-  margin-right: 1rem;
-  background-color: red;
+@keyframes scale-close {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
+.modal .activities-container .close-delete-btn .close-modal {
+  margin-right: 3rem;
+  background-color: red;
+  animation-name: scale-close;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.modal .activities-container .close-delete-btn .close-modal:hover {
+  animation-play-state: paused;
+}
+
 .modal .activities-container .close-delete-btn .delete-modal {
   background-color: rgb(104, 101, 101);
+  animation-name: scale-close;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }

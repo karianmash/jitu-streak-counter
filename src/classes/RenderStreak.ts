@@ -1,7 +1,11 @@
 import { Streak } from "../interfaces/Streak.js";
-import { bestStreak, activitySection, activityStatus, modal } from "../util/htmlElements.js";
+import {
+  bestStreak,
+  activitySection,
+  activityStatus,
+  modal,
+} from "../util/htmlElements.js";
 import { Events } from "./EventHandler.js";
-import { CalculateDays } from "./CalculateDays.js";
 
 export class RenderStreak {
   constructor() {}
@@ -29,7 +33,8 @@ export class RenderStreak {
     setTimeout(() => {
       activityStatus.style.backgroundColor = "";
       activityStatus.innerHTML = "Activities";
-    }, 5000)
+    }, 5000);
+
     activityStatus.style.backgroundColor = "rgb(150, 248, 215)";
     activityStatus.innerHTML = "Success!";
   }
@@ -37,7 +42,7 @@ export class RenderStreak {
   // Render to modal
   public renderStreakModal(streak: Streak) {
     let event = new Events();
-    
+
     // let days: number = CalculateDays.calculateNoOfDays(streak.taskDate);
 
     let daysString: string;
@@ -85,17 +90,26 @@ export class RenderStreak {
 
   // Render best streak
   public renderBestStreak(streak: Streak | undefined): void {
-    bestStreak.innerHTML = `
-        <h3>Best Streaks</h3>
-        <!-- First activity -->
-        <div class="activity">
-          <div class="image-wrapper">
-            <!-- <ion-icon name="logo-no-smoking"></ion-icon> -->
-            <img src="${streak?.taskImage}" alt="" />
-          </div>
-          <p class="date">${streak?.taskDate}</p>
-          <p class="activity-name">${streak?.taskName}</p>
+    let event = new Events();
+
+    let div = document.createElement("div") as HTMLDivElement | any;
+
+    div = `
+      <h3>Best Streak</h3>
+      <!-- First activity -->
+      <div class="activity" id="${streak?.id}">
+        <div class="image-wrapper">
+          <!-- <ion-icon name="logo-no-smoking"></ion-icon> -->
+          <img src="${streak?.taskImage}" alt="" />
         </div>
+        <p class="date">${streak?.taskDate}</p>
+        <p class="activity-name">${streak?.taskName}</p>
+      </div>
     `;
+    bestStreak.innerHTML = div;
+    // get element after being inserted
+    let bestActivity = document.querySelector(".activity") as HTMLDivElement;
+    // Attach eventlistener to it
+    bestActivity.addEventListener("click", event.displayModal);
   }
 }

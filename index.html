@@ -44,21 +44,17 @@
               <!-- Task name -->
               <div class="task-input">
                 <label for="">Task Name</label>
-                <input id="task-name" type="text" value="Bought bike" />
+                <input id="task-name" type="text" />
               </div>
               <!-- Image here -->
               <div class="task-input">
                 <label for="">Image</label>
-                <input
-                  id="task-image"
-                  type="text"
-                  value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzq71cuE5gMkI4-vHFLzSbUrRx8HN7smD_dI16W_slCYPqlfb_IW8NuJHECLkEt42yawE&usqp=CAU"
-                />
+                <input id="task-image" type="text" />
               </div>
               <!-- Date here -->
               <div class="task-input">
                 <label for="">Date</label>
-                <input id="task-date" type="date" value="2022-08-01" />
+                <input id="task-date" type="date" />
               </div>
               <!-- Add todo -->
               <input id="submit-btn" type="submit" value="Add Task" />
@@ -72,11 +68,12 @@
       <!-- <section class="activity-status">Activities</section> -->
 
       <!-- Best Streaks -->
-      <section class="best-streaks">
-      </section>
+      <section class="best-streaks"></section>
 
       <!-- Activity list section -->
-      <section class="activity-section">
+      <section class="activity-container">
+        <h3 id="all-activities">All Activities</h3>
+        <div class="activity-section"></div>
       </section>
     </main>
 
