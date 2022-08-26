@@ -1,6 +1,8 @@
 # jitu-streak-counter
 A streak counter project
 
+# [Demo](https://jitu-streak-counter.vercel.app/)
+
 ## Features
 - Add an activity
 - Filter best activity depending on the day you added it. The more the number of days an activity has, the better it is.
