@@ -48,9 +48,9 @@ export class RenderStreak {
     let daysString: string;
 
     if (streak.taskDays == 0 || streak.taskDays > 1) {
-      daysString = "days";
+      daysString = "days ago";
     } else {
-      daysString = "day";
+      daysString = "day ago";
     }
 
     modal.innerHTML = `
@@ -85,7 +85,7 @@ export class RenderStreak {
 
     closeModal.addEventListener("click", event.closeModalBtn);
 
-    deleteModal.addEventListener("click", event.deleteStreak);
+    deleteModal.addEventListener("click", event.deleteStreakEventHandler);
   }
 
   // Render best streak
@@ -106,6 +106,7 @@ export class RenderStreak {
         <p class="activity-name">${streak?.taskName}</p>
       </div>
     `;
+
     bestStreak.innerHTML = div;
     // get element after being inserted
     let bestActivity = document.querySelector(".activity") as HTMLDivElement;

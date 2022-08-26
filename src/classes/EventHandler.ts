@@ -85,7 +85,7 @@ export class Events {
   }
 
   // delete activity
-  deleteStreak(e: Event | any): void {
+  deleteStreakEventHandler(e: Event | any): void {
     let activityId: number = e.currentTarget.parentElement.parentElement.id;
 
     e.currentTarget.parentElement.parentElement.parentElement.style.display =

@@ -8,7 +8,8 @@
   box-sizing: border-box;
 }
 body {
-  background-color: rgb(247, 253, 255);
+  background-color: rgb(5, 9, 12);
+  color: #fff;
 }
 .welcome-section {
   display: flex;
@@ -232,6 +233,8 @@ body {
 }
 .best-streaks .activity {
   display: flex;
+  background-color: #fff;
+  color: initial;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -240,6 +243,10 @@ body {
   border: 2px solid var(--light-orange);
   border-radius: 6px;
   margin: 0 2rem 1rem 0;
+  transition: all 0.4s ease-in-out;
+}
+.best-streaks .activity:hover {
+  transform: scale(1.05);
 }
 .best-streaks .activity .image-wrapper {
   width: 100%;
@@ -282,6 +289,8 @@ body {
 }
 .activity-section .activity {
   display: flex;
+  background-color: #fff;
+  color: initial;
   align-items: center;
   flex-direction: column;
   height: auto;
@@ -289,6 +298,10 @@ body {
   border: 2px solid var(--light-orange);
   border-radius: 6px;
   margin: 0 2rem 1rem 0;
+  transition: all 0.4s ease-in-out;
+}
+.activity-section .activity:hover {
+  transform: translateY(-0.5rem);
 }
 .activity-section .activity .image-wrapper {
   width: 100%;
@@ -331,6 +344,7 @@ body {
   width: 55%;
   height: auto;
   margin: 0 auto;
+  color: initial;
 }
 .modal .activities-container .activity {
   /* height: 60%; */
@@ -387,7 +401,7 @@ body {
 }
 .modal .activities-container .close-delete-btn .close-modal {
   margin-right: 3rem;
-  background-color: red;
+  background-color: rgb(104, 101, 101);
   animation-name: scale-close;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -398,7 +412,7 @@ body {
 }
 
 .modal .activities-container .close-delete-btn .delete-modal {
-  background-color: rgb(104, 101, 101);
+  background-color: red;
   animation-name: scale-close;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
